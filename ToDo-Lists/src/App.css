@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --fonte: 'Poppins', sans-serif;
+}
+
+body{
+    font-family: var(--fonte);
+    background-color: #121212;
+    color: #f4f4f4;
+    padding: 30px;
+}
+
+.app{
+    max-width: 600px;
+    margin: 0 auto 400px;
+    background-color: #2E2E2E;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1{
+    text-align: center;
+    margin-top: -5px;
+}
+
+h2{
+    margin-bottom: 10px;
+}
+
+p{
+    margin: 10px 0;
+}
+
+input{
+    box-sizing: border-box;
+}
+
+button{
+    background-color: #3700B3;
+    color: #f4f4f4;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+    font-family: var(--fonte);
+    font-weight: bold;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+.Todo-Form{
+    padding-bottom: 1.5rem;
+}
+
+input, select{
+    font-family: var(--fonte);
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px #ddd;
+    width: 100%;
+}
+
+.done:hover{
+    background-color: #018786;
+    opacity: 1;
+}
+
+.remove:hover{
+    background-color: #CF6679;
+    opacity: 1;
+}
