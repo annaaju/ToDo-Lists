@@ -29,6 +29,35 @@ function App() {
     }
   ])
 
+  const addToDo = (text, category) => {
+
+    const newToDos = [...ToDos, {
+      id: Math.floor(Math.random() * 10000),
+      text,
+      category,
+      isCompleted: false,
+    }]
+
+    setToDos(newToDos)
+
+  }
+
+  const removeToDo = (id) => {
+
+    const newToDos = [...ToDos]
+    const filteredToDos = newToDos.filter((Todo) => 
+      Todo.id !== id ? Todo : null)
+
+    setToDos(filteredToDos)
+
+  }
+
+  const completeToDo = (id) => {
+    const newToDos = [...ToDos]
+    newToDos.map((Todo) => Todo.id === id ? Todo.isCompleted = !Todo.isCompleted : Todo)
+    setToDos(newToDos)
+  }
+
   return (
     
       <div className='app'>
@@ -36,12 +65,15 @@ function App() {
           <h1>Lista de Tarefas</h1>
           <div className='ToDo-List'>
             {ToDos.map((ToDo) => (
-             <Todo ToDo={ToDo}/>
+             <Todo key={Todo.id} 
+             ToDo={ToDo}
+             removeToDo={removeToDo}
+             completeToDo={completeToDo}/>
             ))}
 
           </div>
        
-          <TodoForm/>
+          <TodoForm addToDo={addToDo}/>
 
       </div>
   )
