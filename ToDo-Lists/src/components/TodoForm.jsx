@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import {useState} from 'react'
 
-const TodoForm = ({ addToDo }) => {
+const TodoForm = ({ addToDo, currentListName }) => {
 
   const [value, setValue] = useState("")
   const [category, setCategory] = useState("")
@@ -16,7 +16,12 @@ const TodoForm = ({ addToDo }) => {
 
   return (
     <div className="Todo-Form">
-              <h2>Criar tarefa:</h2>
+
+              <h3>Criar tarefa:</h3>
+              <p style={{ marginTop: "-16px" }}>
+              Criando tarefa em: {currentListName || "Nenhuma lista selecionada"}
+              </p>
+      
         <form onSubmit={handleSubmit} >
             <input type="text" 
             placeholder="Digite o título da tarefa" 
